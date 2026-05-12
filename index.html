@@ -1,52 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gokul's Daily Quote</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <h1>Quote of the Moment</h1>
 
-  <div class="wrap">
-    <div class="header">
-      <h1 class="header-title">Today's quote</h1>
-      <div class="tabs">
-        <button class="tab active" id="tab-funny" onclick="setMood('funny')">😄 Funny</button>
-        <button class="tab" id="tab-life" onclick="setMood('life')">🍃 Slice of life</button>
-      </div>
+    <div class="tabs">
+      <button id="tab-funny" class="active" onclick="setMood('funny')">😄 Funny</button>
+      <button id="tab-life" onclick="setMood('life')">🍃 Life</button>
     </div>
 
-    <div class="card">
-      <div>
-        <span class="mood-badge" id="mood-badge">😄 Funny</span>
-        <div class="quote-wrap" id="quote-wrap">
-          <p class="quote-text" id="quote-text">Loading…</p>
-          <p class="quote-author" id="quote-author"></p>
-        </div>
-      </div>
+    <span id="mood-badge" class="mood-badge">😄 Funny</span>
 
-      <div class="actions">
-        <button class="btn" id="fav-btn" onclick="toggleFav()" aria-label="Save to favourites">
-          🤍 <span id="fav-label">Save</span>
-        </button>
-        <button class="btn" id="copy-btn" onclick="copyQuote()" aria-label="Copy quote">
-          📋 <span id="copy-label">Copy</span>
-        </button>
-        <button class="btn" onclick="shareQuote()" aria-label="Share on X">
-          𝕏 Share
-        </button>
-        <button class="btn btn-primary" onclick="nextQuote()">↻ New quote</button>
-      </div>
+    <div id="quote-wrap">
+      <p id="quote-text"></p>
+      <p id="quote-author"></p>
     </div>
 
-    <div class="fav-section">
-      <p class="fav-header">🤍 Saved quotes</p>
-      <div id="fav-list">
-        <p class="fav-empty">Nothing saved yet — hit Save on a quote you like!</p>
-      </div>
+    <div class="actions">
+      <button id="fav-btn" onclick="toggleFav()">🤍 <span id="fav-label">Save</span></button>
+      <button onclick="copyQuote()">📋 <span id="copy-label">Copy</span></button>
+      <button onclick="shareQuote()">🐦 Share</button>
+      <button onclick="nextQuote()">Next Quote →</button>
     </div>
+
+    <div id="fav-list"></div>
   </div>
 
   <script src="script.js"></script>
